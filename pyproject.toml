@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jarus-sora"
+version = "0.1.0"
+description = "JARUS SORA 2.5 risk assessment in Python: ground and air risk classes, TMPR, SAIL, and Operational Safety Objectives"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Sajid Kabir Saji" }]
+requires-python = ">=3.10"
+keywords = ["sora", "jarus", "uas", "drone", "risk-assessment", "sail", "aviation", "regulation", "easa"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+[project.urls]
+Homepage = "https://github.com/sajidkabir/jarus-sora"
+Repository = "https://github.com/sajidkabir/jarus-sora"
+Issues = "https://github.com/sajidkabir/jarus-sora/issues"
+Changelog = "https://github.com/sajidkabir/jarus-sora/blob/main/CHANGELOG.md"
+
+[project.scripts]
+jarus-sora = "jarus_sora.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/jarus_sora"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
